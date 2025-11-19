@@ -159,7 +159,8 @@ psy150_data %>%
 
 teachr_data <- read_csv(here("data", "teachers_anx_covid_sim.csv")) %>% 
   mutate(across(c(occupation:occupation2), as.factor)) %>% 
-  mutate(anxiety = factor(anxiety, levels = c(0,1), labels = c("Low Anxiety", "High Anxiety"))) %>%
+  mutate(anxiety = factor(anxiety, levels = c(0,1),
+                          labels = c("Low Anxiety", "High Anxiety"))) %>%
   mutate(occupation2 = factor(occupation2, levels = c("all_others","teachers"),
          labels = c("Other Occupations", "Teachers"))) 
 
