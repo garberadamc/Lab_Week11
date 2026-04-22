@@ -1,5 +1,5 @@
 ---
-title: "Week 11 Lab - Explore Categoical Variable Associations "
+title: "Week 11 Lab - Explore Categoical Variable Associations"
 subtitle: "*PSY 150* - The Chi-Square Test of Indepenedence"
 author: "KEY"
 date: "`r Sys.Date()`"
@@ -16,7 +16,7 @@ options(scipen = 999)
 
 ### Outline 
 
-- Example demo (follow-along): Investigate associations between categorical variables
+- Example (follow-along): Investigate associations between categorical variables
 - Lab Activity: Complete coding activity & answer questions exploring categorical variable associations
 
 ------------------------------------------------------------------------
@@ -30,8 +30,8 @@ library(janitor)
 library(gt)
 library(gtsummary)
 library(gtExtras)
-
-library(praise); library(beepr) # FUN
+library(praise) 
+library(beepr)
 
 ```
 
@@ -155,6 +155,11 @@ psy150_data %>%
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
 
+### Example 1: Anxiety During COVID by Occupation
+
+**Study source:** Kush et al. (2022) *Teachers’ Mental Health During the COVID-19 Pandemic*
+
+Read in the simulated teacher mental health data:
 ```{r}
 
 teachr_data <- read_csv(here("data", "teachers_anx_covid_sim.csv")) %>% 
@@ -202,8 +207,8 @@ teachr_data <- read_csv(here("data", "teachers_anx_covid_sim.csv")) %>%
 - HINT: The `qchisq()` function requires 2 inputs `alpha` and `df`(*degrees of freedom*). 
 
 ```{r}
-# Function Input 1. Choose alpha (level of significance) 
-# Function Input 2. Determine df for test & add input 
+# Function (input 1): Choose alpha (level of significance) 
+# Function (input 2): Determine df for test & add input 
 
 alpha <- ***
 
@@ -241,6 +246,8 @@ What does it mean when `chi-square statistic` is **less than** the `critical val
 ------------------------------------------------------------------------
 
 ### Example 2: Are the categorical variables `dropped_out` & `gender` related?
+
+**Study source:** Nakajima et al. (2012) *Student Persistence in Community Colleges*
 
 - `dropped_out` (factor levels): `Enrolled`, `Dropped Out`
 - `gender` (factor levels): `Female`, `Male`
@@ -285,6 +292,8 @@ Estimate the Chi-Square Test of Independence
 ------------------------------------------------------------------------
 
 ### Example 3: Are the categorical variables `ethnicity` & `ses_low` related?
+
+**Study source:** Kazeem et al. (2020) *Adverse Childhood Experiences, Socio-Economic Status, and Criminal Behaviour: a Cross-Sectional Correctional Survey*
 
 - `ethnicity` (factor levels): `Hausa`, `Igbo`, `Yoruba`, `Other`
 - `ses_low` (factor levels): `High (SES)`, `Low (SES)`
